@@ -15,6 +15,7 @@
 		047E9513252116830098F656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047E9511252116830098F656 /* LaunchScreen.storyboard */; };
 		047E951E252116830098F656 /* TableViewAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E951D252116830098F656 /* TableViewAppTests.swift */; };
 		047E9529252116830098F656 /* TableViewAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E9528252116830098F656 /* TableViewAppUITests.swift */; };
+		047E953A252147470098F656 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E9539252147470098F656 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		047E9524252116830098F656 /* TableViewAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		047E9528252116830098F656 /* TableViewAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAppUITests.swift; sourceTree = "<group>"; };
 		047E952A252116830098F656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		047E9539252147470098F656 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				047E950F252116830098F656 /* Assets.xcassets */,
 				047E9511252116830098F656 /* LaunchScreen.storyboard */,
 				047E9514252116830098F656 /* Info.plist */,
+				047E9539252147470098F656 /* ImageViewController.swift */,
 			);
 			path = TableViewApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				047E950B2521167E0098F656 /* ViewController.swift in Sources */,
 				047E95072521167E0098F656 /* AppDelegate.swift in Sources */,
+				047E953A252147470098F656 /* ImageViewController.swift in Sources */,
 				047E95092521167E0098F656 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

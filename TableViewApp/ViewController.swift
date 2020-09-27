@@ -11,6 +11,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     var racingNames = [String]()
     var racingImages = [UIImage]()
+    var chosenRacingName = ""
+    var chosenRacingImages = UIImage()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -34,18 +36,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         racingImages.append(UIImage(named: "yzfr1")!)
         racingImages.append(UIImage(named: "zx10r")!)
         
+        navigationItem.title = "Racing Book"
+        
+    }
+    
+    //delegate cell seçildiğinde kullanıcı etkileşimi ne olacak , actionlarda table view'ı bilgilendirir
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete{
+            racingNames.remove(at: indexPath.row)
+            racingImages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return racingImages.count
     }
     
+    //seçilen row ile ilgili bilgiler üzerindek işlemler.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = racingNames[indexPath.row]
         return cell
     }
-
-
+    
+    //seçilince ne olacak
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenRacingName = racingNames[indexPath.row]
+        chosenRacingImages = racingImages[indexPath.row]
+        performSegue(withIdentifier: "toImageViewController", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toImageViewController"{
+            
+            //To cast segue destination to imageViewController
+            let destinationVC = segue.destination as! ImageViewController
+            destinationVC.selectedRacingName = chosenRacingName
+            destinationVC.selectedRacingImage = chosenRacingImages
+        }
+    }
+    
 }
 
